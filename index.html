@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,viewport-fit=cover">
+  <title>Player MIXX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="theme-color" content="dark light">
+  <meta property="og:image" content="assets/redes.png"/>
+  <meta property="og:image:type" content="image/png"/>
+  <meta property="og:image:width" content="600"/>
+  <meta property="og:image:height" content="360"/>
+  <meta property="og:title" content="Radio Player PRO"/>
+  <meta property="og:description" content="Las Mejores Radios del Momento"/>
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="custom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js" defer></script>
+	<script src="custom.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <link href='manifest.json' rel='manifest'/>
+  <script>
+    window.streams = {
+      timeRefresh: 5000,
+      stations: [
+        
+        {
+          name: "HITS RADIO PERU",
+          hash: "nexostreaming",
+          description: "Tocando la mejor musica del momento",
+          logo: "assets/hits.gif",
+          album: "assets/cover.png",
+          cover: "assets/cover.png",
+         api: "https://free.radioapi.lat/nexo?url=https://audio1stream.com/8038/stream",
+          stream_url: "https://audio1stream.com/8038/stream",
+          tv_url: 'https://live-server.mivideo.pro:8081/latinavzla/embed.html',
+          server:"spotify",
+          program: {
+            time: "10:00",
+            name: "HITS RADIO PERU",
+            description: "EL SONIDO DE LA CALLE",
+          },
+         social: {
+            facebook: "https://www.facebook.com/avcreativostacna",
+            youtube: "#",
+            instagram: "https://www.instagram.com/creativoagenciaperu/",
+            tiktok: "https://www.tiktok.com/@creativoperu",
+            android: "https://play.google.com/store/apps/details?id=com.creativoagencia.demo2025",
+            ios: "https://play.google.com/store/apps/details?id=com.creativoagencia.demo2025",
+          }
+        
+        },
+        
+      ]
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/akira-expanded" rel="stylesheet">
+</head>
+
+<body class="preload">
+  <div class="app">
+    <img src="assets/cover.png" alt="cover" class="player-cover-image song-cover" height="100%" width="100%">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-wrapper flex justify-between">
+        <!-- logo -->
+        <a class="header-logo" href="#site">
+          <img class="header-logo-img" src="assets/hits.gif" alt="logo">
+        </a>
+        <!-- toggles -->
+        <div class="toggle-options flex items-start">
+          <div class="online-tv"></div>
+          <!-- <button class="btn l:none" data-outside="mobile-menu">
+            <svg class="i i-bars" viewBox="0 0 24 24">
+              <path d="M3 6h18M3 12h18M3 18h18"></path>
+            </svg>
+          </button> -->
+          <button class="btn l:none" data-outside="offcanvas-history">
+            <svg class="i i-music" viewBox="0 0 24 24">
+              <path d="M22 16V2L9 5v13"></path>
+              <circle cx="5" cy="18" r="4"></circle>
+              <circle cx="18" cy="16" r="4"></circle>
+            </svg>
+          </button>
+          <button class="btn l:none" data-outside="modal-share">
+            <svg class="i i-share" viewBox="0 0 24 24">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <path d="m8.5 13.5 7 4m0-11-7 4"></path>
+            </svg>
+          </button>
+          <button class="btn l:none" data-outside="modal-lyrics">
+            <svg class="i i-list-music" viewBox="0 0 24 24">
+              <path d="M16 8h6V3h-6v15M2 3h9M2 8h9m-9 5h3"></path>
+              <circle cx="12" cy="18" r="4"></circle>
+            </svg>
+          </button>
+          <button class="btn l:none" data-outside="offcanvas-stations">
+            <svg class="i i-microphone" viewBox="0 0 24 24">
+              <path d="M5 12a1 1 0 0 0 14 0m-7 7v4m-4 0h8M9 12a1 1 0 0 0 6 0V4a1 1 0 0 0-6 0Z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Cover -->
+		<main class="container container-flex">
+			<div class="main">
+				<div class="main-artwork">
+					<div class="player-artwork player-artwork-style relative">
+						<div>
+							<img alt="artwork" height="600" src="assets/cover.png" width="600">
+							<div class="player-program"></div>
+						</div>
+					</div>
+					<div class="rk-current-song-info">
+						<div class="rk-current-song">Cancion actual</div>
+						<div class="rk-current-artist">Artista actual</div>
+					</div>
+				</div>
+				<div class="main-content">
+					<img class="rk-banner" src="https://picsum.photos/1000/400" />
+					<span style="color: white; margin-bottom: 0.5rem; display: inline-block;">Musica anterior</span>
+					<div class="rk-card">
+						<div class="rk-card-image">
+							<img class="rk-prev-thumbnail rk-card-thumbnail" src="assets/cover.png" alt="artwork" height="600" width="600">
+						</div>
+						<div class="rk-card-content">
+							<span class="rk-prev-song rk-card-song">Musica anterior</span>
+							<span class="rk-prev-artist rk-card-artist">Artist anterior</span>
+						</div>
+					</div>
+				</div>
+				<div class="main-social">
+					<!-- Social -->
+					<div class="player-social flex wrap"></div>
+				</div>
+			</div>
+		</main>
+
+    <!-- Player -->
+    <div class="player song-now flex column">
+
+      <div class="player-wrapper">
+        <!-- Cover -->
+        <div class="player-cover flex items-center justify-center g-2 items-center">
+          <div class="player-left flex items-center">
+            <!-- Cover -->
+            <div class="player-artwork-style relative">
+              <img class="player-artwork-mini" alt="artwork" height="600" src="assets/cover.png" width="600">
+            </div>
+            <!-- Data -->
+            <div class="player-cover-title uppercase fw-700 flex column">
+              <span class="color-title fw-700 song-name song-title station-name">Song</span>
+              <span class="color-title fs-8 song-artist station-description truncate">Artist</span>
+            </div>
+          </div>
+          <!-- Controladores -->
+          <div class="player-controller">
+            <!-- Cambiar estacion hacia atras -->
+            <button class="player-button player-button-backward-step">
+              <svg class="i i-backward-step" viewBox="0 0 24 24">
+                <path d="M6 5v14M18 4v16L8 12Z"></path>
+              </svg>
+            </button>
+            <!-- Reproducir/Pausar -->
+            <button aria-label="Play/Pause" class="player-button player-button-play flex-none">
+              <svg class="i i-play" viewBox="0 0 24 24">
+                <path d="m7 3 14 9-14 9z"></path>
+              </svg>
+            </button>
+            <!-- Cambiar estacion hacia adelante -->
+            <button class="player-button player-button-forward-step">
+              <svg class="i i-forward-step" viewBox="0 0 24 24">
+                <path d="M18 5v14M6 4v16l10-8Z"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="player-right flex items-center">
+            <!-- Historial -->
+            <button class="player-button player-button-history" data-outside="offcanvas-history">
+              <svg class="i i-music" viewBox="0 0 24 24">
+                <path d="M22 16V2L9 5v13"></path>
+                <circle cx="5" cy="18" r="4"></circle>
+                <circle cx="18" cy="16" r="4"></circle>
+              </svg>
+              History
+            </button>
+            <!-- Volumen -->
+            <div class="player-button player-button-volume">
+              <button class="player-button player-button-volume-toggle" data-outside="player-volume">
+                <svg class="i i-volume-high" viewBox="0 0 24 24">
+                  <path d="M6 9H2v6h4l5 4V5Zm9 7a5 5 0 0 0 0-8m3 12a10 10 0 0 0 0-16"></path>
+                </svg>
+                Volume
+              </button>
+              <div class="dropdown" id="player-volume">
+                <div class="player-range-wrapper">
+                  <input aria-label="Volume" class="player-volume" max="100" min="0" name="player" type="range" value="100">
+                  <div class="player-range-fill"></div>
+                  <div class="player-range-thumb"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Letras -->
+            <button class="player-button player-button-share" data-outside="modal-share">
+              <svg class="i i-share" viewBox="0 0 24 24">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <path d="m8.5 13.5 7 4m0-11-7 4"></path>
+              </svg>
+              Share
+            </button>
+            <!-- Letras -->
+            <button class="player-button player-button-lyrics" data-outside="modal-lyrics">
+              <svg class="i i-list-music" viewBox="0 0 24 24">
+                <path d="M16 8h6V3h-6v15M2 3h9M2 8h9m-9 5h3"></path>
+                <circle cx="12" cy="18" r="4"></circle>
+              </svg>
+              Lyrics
+            </button>
+            <!-- Multiradio -->
+          
+
+            <div class="player-station player-artwork-style relative">
+              <img alt="artwork" height="600" src="assets/cover.png" width="600">
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <!-- Visualizador -->
+    <div class="visualizer" data-bars="80"></div>
+
+    <!-- Estaciones -->
+    <aside class="offcanvas scrollbar" id="offcanvas-stations">
+      <div class="offcanvas-content">
+        <div class="stations flex g-1" id="stations"></div>
+      </div>
+    </aside>
+
+    <!-- Ultimas canciones -->
+    <aside class="offcanvas scrollbar" id="offcanvas-history">
+      <div class="offcanvas-content">
+        <div class="history flex g-0.5 fs-7" id="history"></div>
+      </div>
+    </aside>
+
+    <div class="modal" id="modal-lyrics">
+      <div class="modal-content">
+        <div class="modal-title color-title flex items-center justify-between">
+          <h2 class="modal-title-text m:fs-3 fs-5 fw-500">Letra</h2>
+          <button data-close aria-label="close">
+            <svg class="i i-xmark" viewBox="0 0 24 24">
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body scrollbar" id="lyrics">
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal-video" id="modal-tv">
+      <button data-close aria-label="close" class="btn">
+        <svg class="i i-xmark" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+      </button>
+      <div class="modal-body-video"></div>
+    </div>
+
+    <div class="modal-overlay"></div>
+
+    <div class="player-modal" id="modal-share">
+      <button data-close="" class="player-modal-x">
+        <svg class="i i-xmark" viewBox="0 0 24 24">
+          <path d="M18 6 6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2>Visita nuestras redes</h2>
+      <img src="assets/cover.png" alt="portada modal" class="player-modal-image" height="600px" width="600px">
+      <div class="player-title song-name fw-500">Song</div>
+      <span class="player-text song-artist">Artist</span>
+      <div class="modal-social player-social socials"></div>
+    </div>
+    <div class="modal-overlay"></div>
+<!-- 
+    <div class="mobile-menu" id="mobile-menu">
+      <footer class="footer">
+        <div class="footer-wrapper column flex">
+          <div class="footer-app flex wrap g-0.75"></div>
+        </div>
+      </footer>
+    </div> -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+.player-button {
+	font-weight: 700;
+}
+
+@keyframes bga {
+	50% {
+		transform: scale(2)
+	}
+}
+
+:root {
+	--cover-size: 300px;
+	--control-size: 80px;
+	--max-width: 1140px;
+}
+
+main {
+	position: relative;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	margin: 0 auto;
+	padding-top: calc((100dvh - var(--cover-size)) / 2);
+	padding-bottom: calc(var(--control-size) + 5rem);
+}
+
+.player-artwork {
+	width: var(--cover-size);
+	height: var(--cover-size);
+	box-shadow: none;
+}
+
+.player-cover-image {
+	position: fixed;
+}
+
+.header-wrapper {
+	height: var(--control-size);
+	align-items: center;
+	width: 100%;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.app {
+	overflow: auto;
+}
+
+.app::after {
+	position: fixed;
+}
+
+.container {
+	width: 100%;
+	max-width: var(--max-width);
+}
+
+.player {
+	position: fixed;
+	inset: inherit;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 0;
+}
+
+.player-wrapper {
+	width: 100%;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	height: var(--control-size);
+	display: flex;
+	align-items: center;
+}
+
+.player-cover {
+	width: 100%;
+}
+
+.container-flex {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.player::before {
+	border-radius: 0;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.player-station {
+	display: none !important;
+}
+
+.player-social {
+	margin-top: 1.5rem;
+	display: flex;
+	flex-direction: row;
+}
+
+.player-social:not(.modal-social) {
+	display: flex !important;
+}
+
+.main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+.rk-card {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	position: relative;
+	background-color: var(--accent, #000);
+}
+
+.rk-card-image {
+	margin-right: 1rem;
+}
+
+.rk-card-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.rk-card-thumbnail {
+	width: 48px;
+	height: 48px;
+	border-radius: 9999px;
+	object-fit: cover;
+}
+
+.rk-card-song {
+	font-size: 1rem;
+	font-weight: 700;
+	color: white;
+}
+
+.rk-card-artist {
+	font-size: 0.75rem;
+	color: white;
+}
+
+.player-button-tv {
+	display: none !important;
+}
+
+.rk-banner {
+	width: 100%;
+	margin-bottom: 3rem;
+	border-radius: 1rem;
+}
+
+.rk-current-song-info {
+	padding: 0.5rem;
+	border-radius: 9999px;
+	background-color: var(--accent, #000);
+	font-weight: 700;
+	text-align: center;
+	color: white;
+	margin-top: 1rem;
+}
+
+@media (min-width: 762px) {
+	.main {
+		justify-content: start;
+		align-items: start;
+		flex-direction: row;
+	}
+
+	.main > * + * {
+		margin-top: 0 !important;
+	}
+
+	.main-content {
+		flex: 1;
+		margin-right: 2rem;
+	}
+
+	.player-social {
+		flex-direction: column;
+		margin: 0 !important;
+	}
+
+	.main-artwork {
+		margin-right: 2rem;
+	}
+}
