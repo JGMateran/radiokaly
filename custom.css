@@ -172,6 +172,10 @@ main {
 	margin-top: 1rem;
 }
 
+.visualizer {
+	position: fixed;
+}
+
 @media (min-width: 762px) {
 	.main {
 		justify-content: start;
