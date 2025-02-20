@@ -183,6 +183,18 @@ main {
 		flex-direction: row;
 	}
 
+	.header-wrapper {
+		display: flex;
+		justify-content: start !important;
+		padding: 0;
+		position: relative;
+	}
+
+	.header-logo {
+		transform: translateX(0);
+		left: 0;
+	}
+
 	.main > * + * {
 		margin-top: 0 !important;
 	}
