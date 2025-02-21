@@ -228,5 +228,6 @@ main {
 
 	.main-artwork {
 		margin-right: 2rem;
+		max-width: var(--cover-size);
 	}
 }
