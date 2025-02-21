@@ -158,8 +158,6 @@ main {
 
 .rk-banner {
 	width: 100%;
-	margin-bottom: 3rem;
-	border-radius: 1rem;
 }
 
 .rk-current-song-info {
@@ -174,6 +172,19 @@ main {
 
 .visualizer {
 	position: fixed;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
 
 @media (min-width: 762px) {

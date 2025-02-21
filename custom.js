@@ -14,6 +14,12 @@ function isJingle(query) {
 	return query.toLowerCase().includes('jingle')
 }
 
+const emblaNode = document.querySelector('.embla')
+const options = { loop: true }
+const emblaApi = EmblaCarousel(emblaNode, options)
+
+console.log(emblaApi.slideNodes()) // Access API
+
 async function customAction(data) {
 	const $artist = document.querySelectorAll('.rk-current-artist')
 	const $song = document.querySelectorAll('.rk-current-song')
