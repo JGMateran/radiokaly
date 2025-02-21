@@ -116,12 +116,9 @@ main {
 }
 
 .rk-card {
-	display: flex;
 	align-items: center;
-	padding: 1rem;
-	border-radius: 0.5rem;
 	position: relative;
-	background-color: var(--accent, #000);
+	display: none;
 }
 
 .rk-card-image {
@@ -193,7 +190,19 @@ main {
 	display: none !important;
 }
 
+.player-left .player-artwork-style {
+	border-radius: 0 !important;
+}
+
 @media (min-width: 762px) {
+	.rk-card {
+		display: flex;
+	}
+
+	.header-logo-img {
+		display: none !important;
+	}
+
 	.main {
 		justify-content: start;
 		align-items: start;
