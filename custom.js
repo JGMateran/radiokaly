@@ -16,7 +16,12 @@ function isJingle(query) {
 
 const emblaNode = document.querySelector('.embla')
 const options = { loop: true }
-const emblaApi = EmblaCarousel(emblaNode, options)
+const plugins = [
+	EmblaCarouselAutoplay({
+		stopOnInteraction: false
+	})
+]
+const emblaApi = EmblaCarousel(emblaNode, options, plugins)
 
 console.log(emblaApi.slideNodes()) // Access API
 
